@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágatha decants - Perfumes Importados</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #DCAE96;
+            border-radius: 4px;
+        }
+        
+        /* Product card hover effect */
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.link/l3o2fn" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="logo.jpeg" alt="Ágatha decants" class="h-12 w-12 rounded-full">
+                <h1 class="text-xl md:text-2xl font-bold text-amber-800">Ágatha decants</h1>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="agatha_decants.html" class="text-gray-700 hover:text-amber-700 font-medium">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html" class="text-amber-700 font-medium border-b-2 border-amber-700 pb-1">Miniaturas</a>
+                <a href="masculinos.html" class="text-gray-700 hover:text-amber-700 font-medium">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Social Icons -->
+            <div class="hidden md:flex space-x-4">
+                
+                <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-amber-700 font-medium">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html class="text-gray-700 hover:text-amber-700 font-medium">Miniaturas</a>
+                <a href="masculinos.html" class="text-gray-700 hover:text-amber-700 font-medium">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+                <div class="flex space-x-6 pt-2">
+                    <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .perfume-image {
+            transition: transform 0.3s ease;
+        }
+        .perfume-image:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-light dark:bg-dark text-dark dark:text-light min-h-screen flex flex-col">
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div class="flex flex-col lg:flex-row gap-8 items-center">
+            <!-- Imagem do perfume -->
+            <div class="w-full lg:w-1/2 flex justify-center fade-in">
+                <img src="masculino/Bad Boy.jpeg" 
+                     alt="Decant Allure Homme ÉDition Blanche" 
+                     class="perfume-image rounded-lg shadow-xl w-full max-w-md h-auto object-cover">
+            </div>
+
+            <!-- Detalhes do produto -->
+            <div class="w-full lg:w-1/2 fade-in">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Mini Bad Boy cobalt</h1>
+                <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+                <!-- Valor único -->
+                <div class="mb-6">
+                    <p class="text-sm font-medium mb-2"></p>
+                    <div class="px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800">
+                        <p class="font-medium">R$ 120,90</p>
+                    </div>
+                </div>
+
+                <!-- Botão de compra -->
+                
+                <a href="https://w.app/vxtns3" target="_blank"
+                class="w-full bg-primary dark:bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 mb-8 flex items-center justify-center gap-2">
+                <i class="fas fa-shopping-cart"></i>
+                COMPRAR
+                </a>
+
+
+                <!-- Rodapé com descrição -->
+                <footer class="border-t border-gray-200 dark:border-gray-700 pt-6">
+                    <h2 class="text-lg font-semibold mb-3">Descrição do Produto</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        O Bad Boy Cobalt Eau de Parfum da Carolina Herrera é uma fragrância masculina ousada e sofisticada, que celebra a dualidade da masculinidade moderna e o vínculo da fraternidade. Inspirado na força do cobalto, ele combina frescor e sensualidade mineral para um aroma marcante e eletrizante.
+                    </p>
+
+                </footer>
+            </div>
+        </div>
+    </main>
+     <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.jpeg" alt="Ágatha decants" class="h-10 w-10 rounded-full">
+                        <h3 class="text-xl font-bold text-amber-400">Ágatha decants</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Decantes e miniaturas de perfumes importados com autenticidade garantida e os melhores preços.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-400 hover:text-pink-500">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.link/l3o2fn" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Categorias</h4>
+                    <ul class="space-y-2">
+                        <li><a href="decantes.html" class="text-gray-400 hover:text-white">Decants</a></li>
+                        <li><a href="miniaturas.html" class="text-gray-400 hover:text-white">Miniaturas</a></li>
+                        <li><a href="masculinos.html" class="text-gray-400 hover:text-white">Perfumes Masculinos</a></li>
+                        <li><a href="femininos.html" class="text-gray-400 hover:text-white">Perfumes Femininos</a></li>
+                    </ul>
+                </div>
+          
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-400"></i>
+                            <span>São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-amber-400"></i>
+                            <span>(11) 98725-7428</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-amber-400"></i>
+                            <span>agathadecants@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Ágatha decants. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+        <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Highlight current page in mobile menu
+        const currentPage = window.location.pathname.split('/').pop() || 'masculinos.html';
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        
+        mobileLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-orange-400');
+                link.classList.add('font-medium');
+            }
+        });
+        
+        // Highlight current page in desktop nav
+        const desktopLinks = document.querySelectorAll('header nav a');
+        
+        desktopLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-orange-600');
+                link.classList.add('font-semibold');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in effect to elements when they enter viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DCAE96',
+                        secondary: '#FF9E7D',
+                        dark: '#1E1E2C',
+                        light: '#F5F5F7'
+                    }
+                }
+            }
+        }
+
+        // Animação do botão de compra
+        document.getElementById('buy-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.add('scale-95');
+            setTimeout(() => this.classList.remove('scale-95'), 150);
+        });
+
+        // Manipulação de links
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Aqui você pode adicionar lógica de navegação se necessário
+                console.log('Navegação interceptada para:', this.href);
+            });
+        });
+    </script>
+</body>
+</html> 

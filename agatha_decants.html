@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágatha decants - Perfumes Importados</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #d1a570;
+            border-radius: 4px;
+        }
+        
+        /* Product card hover effect */
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.link/l3o2fn" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="logo.jpeg" alt="Ágatha decants" class="h-12 w-12 rounded-full">
+                <h1 class="text-xl md:text-2xl font-bold text-amber-800">Ágatha decants</h1>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-amber-700 font-medium border-b-2 border-amber-700 pb-1">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html" class="text-gray-700 hover:text-amber-700 font-medium">Miniaturas</a>
+                <a href="masculinos.html" class="text-gray-700 hover:text-amber-700 font-medium">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Social Icons -->
+            <div class="hidden md:flex space-x-4">
+                <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-amber-700 font-medium">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html class="text-gray-700 hover:text-amber-700 font-medium">Miniaturas</a>
+                <a href="masculinos.html" class="text-gray-700 hover:text-amber-700 font-medium">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+                <div class="flex space-x-6 pt-2">
+                    <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+<section class="relative bg-[#DCAE96] py-16 md:py-24"> <!-- Fundo salmão claro -->
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6"> <!-- Texto branco -->
+        Ágatha Decants
+      </h1>
+      <p class="text-white text-lg mb-8"> <!-- Texto branco -->
+        Bem-vindo à Ágatha Decants, onde a sofisticação tem fragrância.
+      </p>
+      <div class="flex space-x-4">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Decants -->
+                <div id="decants" class="tab-panel active">
+                    <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">Novidades</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                       <!-- Product 23 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="CH Men.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/CH Men.jpeg" alt="CH Men" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant CH Men - Eau de Toilette</h3>
+                        <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 79,00</span>
+                            <button onclick="window.location.href='CH Men.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                  <!-- Product 25 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="IRRESISTIBLE.html" class="relative aspect-[2/3] block">
+        <img src="feminino/IRRESISTIBLE.jpeg" alt="Black XS" class="w-full h-full object-cover absolute inset-0">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Irresistible - Eau de Parfum</h3>
+        <p class="text-gray-600 text-sm mb-3">Givenchy</p>
+        <div class="flex justify-between items-center">
+            <span class="text-pink-700 font-bold">R$ 73,00</span>
+            <button onclick="window.location.href='IRRESISTIBLE.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product 26 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="My Way.html" class="relative aspect-[2/3] block">
+        <img src="feminino/My Way.jpeg" alt="Black XS" class="w-full h-full object-cover absolute inset-0">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant My Way</h3>
+        <p class="text-gray-600 text-sm mb-3">Giorgio Armani</p>
+        <div class="flex justify-between items-center">
+            <span class="text-pink-700 font-bold">R$ 73,00</span>
+            <button onclick="window.location.href='My Way.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Decants -->
+                <div id="decants" class="tab-panel active">
+                    <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">Decants</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                       <!-- Product 15 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="Invictus.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/InvictusD.jpeg" alt="Invictus EDT" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Invictus EDT</h3>
+                        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 62,00</span>
+                            <button onclick="window.location.href='Invictus.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 18 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="1million.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/1 millionD.jpeg" alt="1 Million" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant 1 Million</h3>
+                        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 61,00</span>
+                            <button onclick="window.location.href='1million.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                        
+                        <!-- Product 23 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="Good Girl.html" class="relative aspect-[2/3] block">
+        <img src="feminino/Good GirlD.jpeg" alt="Good Girl" class="w-full h-full object-cover absolute inset-0">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Good Girl</h3>
+        <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+        <div class="flex justify-between items-center">
+            <span class="text-pink-700 font-bold">R$ 65,90</span>
+            <button onclick="window.location.href='Good Girl.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+                        
+                        <!-- Produto 14 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+  <a href="Lady Million.html" class="relative block" style="padding-bottom: 150%;">
+    <img src="feminino/ladyD.jpeg" alt="Decant Lady Million EDP" class="absolute top-0 left-0 w-full h-full object-cover">
+  </a>
+  <div class="p-4">
+    <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Lady Million EDP</h3>
+    <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+    <div class="flex justify-between items-center">
+      <span class="text-pink-700 font-bold">R$ 61,00</span>
+      <button onclick="window.location.href='Lady Million.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <section class="max-w-screen-xl mx-auto px-4 mt-12">
+    <div class="text-center">
+        <a href="decantes.html" class="inline-block border-2 border-amber-700 text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full font-medium transition duration-300">
+            Ver Todos os Decants
+        </a>
+    </div>
+</section>
+
+
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Decants -->
+                <div id="decants" class="tab-panel active">
+                    <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">Miniaturas</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <!-- Produto 3 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+        <a href="Mini Bad Boy cobalt.html" class="relative block" style="padding-bottom: 150%;">
+          <img src="masculino/Bad Boy.jpeg" alt="Bad Boy cobalt" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Bad Boy cobalt</h3>
+          <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+          <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 120,90</span>
+            <button onclick="window.location.href='Mini Bad Boy cobalt.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+          </div>
+        </div>
+      </div>
+                        
+                        <!-- Produto 5 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+  <a href="Mini 212 NYC.html" class="relative block" style="padding-bottom: 150%;">
+    <img src="masculino/212 NYC.jpeg" alt="212 NYC" class="absolute top-0 left-0 w-full h-full object-cover" />
+  </a>
+  <div class="p-4">
+    <h3 class="font-bold text-lg text-gray-800 mb-1">Mini 212 NYC</h3>
+    <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+    <div class="flex justify-between items-center">
+      <span class="text-blue-700 font-bold">R$ 100,00</span>
+      <button onclick="window.location.href='Mini 212 NYC.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>
+                        
+                       <!-- Produto 4 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+  <a href="Mini 212 VIP Rosé.html" class="relative block" style="padding-bottom: 150%;">
+    <img src="feminino/212 vrose.jpeg" alt="Mini 212 VIP Rosé" class="absolute top-0 left-0 w-full h-full object-cover">
+  </a>
+  <div class="p-4">
+    <h3 class="font-bold text-lg text-gray-800 mb-1">Mini 212 VIP Rosé</h3>
+    <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+    <div class="flex justify-between items-center">
+      <span class="text-pink-700 font-bold">R$ 115,90</span>
+      <button onclick="window.location.href='Mini 212 VIP Rosé.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+    </div>
+  </div>
+</div>
+                        
+                        <!-- Produto 10 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+  <a href="Mini Fame.html" class="relative block" style="padding-bottom: 150%;">
+    <img src="feminino/Fame.jpeg" alt="Mini Fame" class="absolute top-0 left-0 w-full h-full object-cover">
+  </a>
+  <div class="p-4">
+    <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Fame</h3>
+    <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+    <div class="flex justify-between items-center">
+      <span class="text-pink-700 font-bold">R$ 100,00</span>
+      <button onclick="window.location.href='Mini Fame.html'" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+    </div>
+  </div>
+</div>
+                    
+    </section>
+
+    <section class="max-w-screen-xl mx-auto px-4 mt-12">
+    <div class="text-center">
+        <a href="miniaturas.html" class="inline-block border-2 border-amber-700 text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full font-medium transition duration-300">
+            Ver Todas as Miniaturas
+        </a>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <style>
+    .bg-custom {
+        background-color: #e5c9ba;
+    }
+</style>
+
+<!-- About Section -->
+<section class="py-16 bg-custom">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">Porque escolher a Ágatha decants?</h2>
+                <p class="text-gray-700 mb-6">Especialistas em decantes e miniaturas de perfumes importados, com autenticidade garantida e os melhores preços. Seleção cuidadosa das melhores fragrâncias internacionais.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-check text-amber-700"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">Autenticidade Garantida</h4>
+                            <p class="text-gray-600">Todos nossos perfumes são 100% originais.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-truck text-amber-700"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">Entrega Rápida</h4>
+                            <p class="text-gray-600">Enviamos para todo Brasil após a confirmação do pagamento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-lock text-amber-700"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">Compra Segura</h4>
+                            <p class="text-gray-600">Site protegido e diversas opções de pagamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/5 bg-white p-6 rounded-xl shadow-lg">
+                <img src="logo.jpeg" alt="Loja Ágatha Decants" class="rounded-lg w-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.jpeg" alt="Ágatha decants" class="h-10 w-10 rounded-full">
+                        <h3 class="text-xl font-bold text-amber-400">Ágatha decants</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Decantes e miniaturas de perfumes importados com autenticidade garantida e os melhores preços.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-400 hover:text-pink-500">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.link/l3o2fn" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Categorias</h4>
+                    <ul class="space-y-2">
+                        <li><a href="decantes.html" class="text-gray-400 hover:text-white">Decants</a></li>
+                        <li><a href="miniaturas.html" class="text-gray-400 hover:text-white">Miniaturas</a></li>
+                        <li><a href="masculinos.html" class="text-gray-400 hover:text-white">Perfumes Masculinos</a></li>
+                        <li><a href="femininos.html" class="text-gray-400 hover:text-white">Perfumes Femininos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-400"></i>
+                            <span>São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-amber-400"></i>
+                            <span>(11) 98725-7428</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-amber-400"></i>
+                            <span>agathadecants@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Ágatha decants. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Highlight current page in mobile menu
+        const currentPage = window.location.pathname.split('/').pop() || 'masculinos.html';
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        
+        mobileLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-blue-400');
+                link.classList.add('font-medium');
+            }
+        });
+        
+        // Highlight current page in desktop nav
+        const desktopLinks = document.querySelectorAll('header nav a');
+        
+        desktopLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-orange-600');
+                link.classList.add('font-semibold');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in effect to elements when they enter viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+// Product data extraction and filtering
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all product cards
+    const productCards = document.querySelectorAll('.product-card');
+    const brandFilter = document.getElementById('brand-filter');
+    const resetButton = document.getElementById('reset-filters');
+    const searchInput = document.getElementById('product-search');
+    const searchButton = document.getElementById('search-btn');
+
+    // Extract product data (name, brand, price) from DOM
+    function extractProductData() {
+        return Array.from(productCards).map(card => {
+            return {
+                element: card,
+                name: card.querySelector('h3').textContent.trim(),
+                brand: card.querySelector('p').textContent.trim(),
+                price: parseFloat(
+                    card.querySelector('span').textContent
+                        .replace('R$ ', '')
+                        .replace(/\./g, '')
+                        .replace(',', '.')
+                )
+            };
+        });
+    }
+
+    // Filter products by brand
+    function filterByBrand(brand) {
+        productCards.forEach(card => {
+            const cardBrand = card.querySelector('p').textContent.trim();
+            if (brand === '' || cardBrand === brand) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Search products by name
+    function searchProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const products = extractProductData();
+        let foundMatch = false;
+        
+        products.forEach(product => {
+            const shouldShow = product.name.toLowerCase().includes(searchTerm);
+            product.element.style.display = shouldShow ? 'block' : 'none';
+            
+            if (shouldShow && !foundMatch) {
+                product.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                foundMatch = true;
+            }
+        });
+
+        if (!foundMatch && searchTerm) {
+            alert('Nenhum produto encontrado com esse nome.');
+            resetFilters();
+        }
+    }
+
+    // Reset all filters and show all products
+    function resetFilters() {
+        brandFilter.value = '';
+        searchInput.value = '';
+        productCards.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+
+    // Event listeners
+    brandFilter.addEventListener('change', function() {
+        filterByBrand(this.value);
+    });
+
+    searchButton.addEventListener('click', searchProducts);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchProducts();
+    });
+
+    resetButton.addEventListener('click', resetFilters);
+});
+        
+        // Product search functionality
+        const productSearch = document.getElementById('product-search');
+        const searchBtn = document.getElementById('search-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        function searchProducts() {
+            const searchTerm = productSearch.value.toLowerCase();
+            let foundMatch = false;
+            const products = extractProductData();
+            
+            products.forEach(p => {
+                const shouldShow = p.name.toLowerCase().includes(searchTerm);
+                p.element.style.display = shouldShow ? 'block' : 'none';
+                
+                if (shouldShow && !foundMatch) {
+                    p.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    foundMatch = true;
+                }
+            });
+
+            if (!foundMatch && searchTerm) {
+                alert('Nenhum produto encontrado com esse nome.');
+                resetFilters();
+            } else if (!searchTerm) {
+                applyFilters(); // Reapply other filters when search is cleared
+            }
+        }
+
+        // Event listeners for search
+        searchBtn.addEventListener('click', searchProducts);
+        productSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+    </script>
+</body>
+</html>

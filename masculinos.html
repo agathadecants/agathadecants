@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágatha decants - Perfumes Masculinos</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        /* Estilos para filtros */
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1em;
+        }
+
+        select:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        #reset-filters {
+            transition: all 0.2s ease;
+        }
+
+        #reset-filters:hover {
+            transform: translateY(-1px);
+        }
+
+        #product-search::placeholder {
+            color: #9CA3AF;
+        }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1a570;
+    border-radius: 4px;
+}
+
+/* Product card hover effect */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container central com espaçamento adequado */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Espaçamento interno das seções */
+section {
+    padding: 40px 0;
+}
+
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Category highlight */
+        .category-tab.masculinos {
+            background-color: #1e40af;
+            color: white;
+        }
+        
+        /* Gradient background for featured section */
+        .gradient-bg {
+            background: linear-gradient(135deg,#2c4cb6, #597ad4 50%, #5381e6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.link/l3o2fn" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="logo.jpeg" alt="Ágatha decants" class="h-12 w-12 rounded-full">
+                <h1 class="text-xl md:text-2xl font-bold text-gray-800">Ágatha decants</h1>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="agatha_decants.html" class="text-gray-700 hover:text-amber-700 font-medium">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html" class="text-gray-700 hover:text-amber-700 font-medium">Miniaturas</a>
+                <a href="masculinos.html" class="text-amber-700 font-medium border-b-2 border-blue-700 pb-1">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Social Icons -->
+            <div class="hidden md:flex space-x-4">
+                <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-amber-700 font-medium">Início</a>
+                <a href="decantes.html" class="text-gray-700 hover:text-amber-700 font-medium">Decants</a>
+                <a href="miniaturas.html class="text-gray-700 hover:text-amber-700 font-medium">Miniaturas</a>
+                <a href="masculinos.html" class="text-gray-700 hover:text-amber-700 font-medium">Masculinos</a>
+                <a href="femininos.html" class="text-gray-700 hover:text-amber-700 font-medium">Femininos</a>
+                <div class="flex space-x-6 pt-2">
+                    <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-700 hover:text-pink-600">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.link/l3o2fn" class="text-gray-700 hover:text-green-500">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section - Masculinos -->
+<section class="relative gradient-bg py-10 md:py-16">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Perfumes Masculinos
+      </h1>
+      <p class="text-blue-100 text-lg mb-4">
+        Fragrâncias marcantes que definem personalidade e estilo.
+      </p>
+      <div class="flex space-x-4">
+        <!-- Botões ou elementos adicionais aqui -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Produtos -->
+<section id="products" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    
+    <!-- Filtros e busca -->
+    <div class="mb-8">
+      <!-- Campo de busca -->
+      <div class="mb-4 max-w-md mx-auto relative">
+        <input
+          type="text"
+          id="product-search"
+          placeholder="Busque por nome do perfume..."
+          class="w-full px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+        />
+        <button
+          id="search-btn"
+          class="absolute right-3 top-3 text-gray-400 hover:text-amber-600"
+          aria-label="Buscar"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <!-- Filtro por marca -->
+        <div>
+          <label for="brand-filter" class="block text-sm font-medium text-gray-700 mb-1">Filtrar por marca:</label>
+          <select id="brand-filter" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm">
+            <option value="">Todas</option>
+            <option value="Azzaro">Azzaro</option>
+            <option value="Carolina Herrera">Carolina Herrera</option>
+            <option value="Chanel">Chanel</option>
+            <option value="Giorgio Armani">Giorgio Armani</option>
+            <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+            <option value="Kenzo">Kenzo</option>
+            <option value="Paco Rabanne">Paco Rabanne</option>
+            <option value="Prada">Prada</option>
+          </select>
+        </div>
+
+        <!-- Botão de reset -->
+        <div class="flex items-end">
+          <button id="reset-filters" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1.5 rounded-md text-sm">
+            Limpar filtros
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de produtos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <!-- Produto 1 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+        <a href="Mini Le Male Le.html" class="relative block" style="padding-bottom: 150%;">
+          <img src="masculino/le male.jpeg" alt="Le Male Le Parfum" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Le Male Le Parfum</h3>
+          <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+          <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 120,90</span>
+            <button onclick="window.location.href='Mini Le Male Le.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+        <a href="Mini Invictus EDT.html" class="relative block" style="padding-bottom: 150%;">
+          <img src="masculino/Invictus.jpeg" alt="Invictus EDT" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Invictus EDT</h3>
+          <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+          <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 99,00</span>
+            <button onclick="window.location.href='Mini Invictus EDT.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+        <a href="Mini Bad Boy cobalt.html" class="relative block" style="padding-bottom: 150%;">
+          <img src="masculino/Bad Boy.jpeg" alt="Bad Boy cobalt" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Bad Boy cobalt</h3>
+          <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+          <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 120,90</span>
+            <button onclick="window.location.href='Mini Bad Boy cobalt.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+        <a href="Mini Le Beau.html" class="relative block" style="padding-bottom: 150%;">
+          <img src="masculino/le beau.jpeg" alt="Le Beau" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Le Beau</h3>
+          <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+          <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 100,00</span>
+            <button onclick="window.location.href='Mini Le Beau.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+  <a href="Mini 212 NYC.html" class="relative block" style="padding-bottom: 150%;">
+    <img src="masculino/212 NYC.jpeg" alt="212 NYC" class="absolute top-0 left-0 w-full h-full object-cover" />
+  </a>
+  <div class="p-4">
+    <h3 class="font-bold text-lg text-gray-800 mb-1">Mini 212 NYC</h3>
+    <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+    <div class="flex justify-between items-center">
+      <span class="text-blue-700 font-bold">R$ 100,00</span>
+      <button onclick="window.location.href='Mini 212 NYC.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Product 6 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="Mini 1 Million.html" class="relative block" style="padding-bottom: 150%;">
+        <img src="masculino/1 Million.jpeg" alt="1 Million" class="absolute top-0 left-0 w-full h-full object-cover">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Mini 1 Million</h3>
+        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+        <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 89,90</span>
+            <button onclick="window.location.href='Mini 1 Million.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="Mini Scandal parfum intense pour homme.html" class="relative block" style="padding-bottom: 150%;">
+        <img src="masculino/Scandal parfum.jpeg" alt="Scandal parfum intense pour homme" class="absolute top-0 left-0 w-full h-full object-cover">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Scandal parfum intense pour homme</h3>
+        <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+        <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 120,90</span>
+            <button onclick="window.location.href='Mini Scandal parfum intense pour homme.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+    <a href="Mini Phantom.html" class="relative block" style="padding-bottom: 150%;">
+        <img src="masculino/Phantom.jpeg" alt="Phantom" class="absolute top-0 left-0 w-full h-full object-cover">
+    </a>
+    <div class="p-4">
+        <h3 class="font-bold text-lg text-gray-800 mb-1">Mini Phantom</h3>
+        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+        <div class="flex justify-between items-center">
+            <span class="text-blue-700 font-bold">R$ 100,00</span>
+            <button onclick="window.location.href='Mini Phantom.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Product 9 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="allure.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/ALLURE.jpeg" alt="ALLURE HOMME ÉDITION BLANCHE" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Allure Homme ÉDition Blanche</h3>
+                        <p class="text-gray-600 text-sm mb-3">Chanel</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 99,90</span>
+                            <button onclick="window.location.href='allure.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="Acqua_di_Gio.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Acqua di Giò Eau de Parfum.jpeg" alt="Acqua di Giò Eau de Parfum" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Acqua di Giò Eau de Parfum</h3>
+                        <p class="text-gray-600 text-sm mb-3">Giorgio Armani</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 65,90</span>
+                            <button onclick="window.location.href='Acqua_di_Gio.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="wanted.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Wanted EDT.jpeg" alt="Wanted EDT" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Wanted EDT</h3>
+                        <p class="text-gray-600 text-sm mb-3">Azzaro</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 58,90</span>
+                            <button onclick="window.location.href='wanted.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="kenzo.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Kenzo.jpeg" alt="Kenzo Homme EDT Intense Kenzo" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Kenzo Homme EDT Intense</h3>
+                        <p class="text-gray-600 text-sm mb-3"> Kenzo</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 59,90</span>
+                            <button onclick="window.location.href='kenzo.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 13 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="luna.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Luna Rossa Ocean.jpeg" alt="Luna Rossa Ocean" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Luna Rossa Ocean</h3>
+                        <p class="text-gray-600 text-sm mb-3">Prada</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 71,00</span>
+                            <button onclick="window.location.href='luna.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 14 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="le_male.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/le maleD.jpeg" alt="Le Male Le Parfum" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Le Male Le Parfum</h3>
+                        <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 66,00</span>
+                            <button onclick="window.location.href='le_male.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="Invictus.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/InvictusD.jpeg" alt="Invictus EDT" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Invictus EDT</h3>
+                        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 62,00</span>
+                            <button onclick="window.location.href='Invictus.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 16 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="bad_boy.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Bad BoyD.jpeg" alt="Bad Boy cobalt" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Bad Boy cobalt</h3>
+                        <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 83,00</span>
+                            <button onclick="window.location.href='bad_boy.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 17 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="le_beau.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/Le BeauD.jpeg" alt="Le Beau" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Le Beau</h3>
+                        <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 59,90</span>
+                            <button onclick="window.location.href='le_beau.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 18 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="1million.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/1 millionD.jpeg" alt="1 Million" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant 1 Million</h3>
+                        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 61,00</span>
+                            <button onclick="window.location.href='1million.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 19 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="212 NYC.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/212 NYCD.jpeg" alt="212 NYC" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant 212 NYC</h3>
+                        <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 65,00</span>
+                            <button onclick="window.location.href='212 NYC.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 20 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="phantom.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/phantomD.jpeg" alt="Phantom" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Phantom</h3>
+                        <p class="text-gray-600 text-sm mb-3">Paco Rabanne</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 60,00</span>
+                            <button onclick="window.location.href='phantom.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 22 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="scandal_m.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/ScandalD.jpeg" alt="Phantom" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant Scandal parfum intense pour homme</h3>
+                        <p class="text-gray-600 text-sm mb-3">Jean Paul Gaultier</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 89,00</span>
+                            <button onclick="window.location.href='scandal_m.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 23 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
+                    <a href="CH Men.html" class="relative block" style="padding-bottom: 150%; position: relative;">
+    <img src="masculino/CH Men.jpeg" alt="CH Men" class="absolute top-0 left-0 w-full h-full object-cover">
+</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Decant CH Men - Eau de Toilette</h3>
+                        <p class="text-gray-600 text-sm mb-3">Carolina Herrera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">R$ 79,00</span>
+                            <button onclick="window.location.href='CH Men.html' "class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-300">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Feature: How to Choose -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800">Como escolher seu perfume masculino?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Guia rápido para encontrar a fragrância perfeita para cada ocasião</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-sun text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Para o dia</h3>
+                    <p class="text-gray-600">Frescos e leves, perfeitos para o uso diário e escritório</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-moon text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Para a noite</h3>
+                    <p class="text-gray-600">Intensos e marcantes, ideais para festas e jantares</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-umbrella-beach text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Para o verão</h3>
+                    <p class="text-gray-600">Aquáticos e cítricos, refrescantes nos dias quentes</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-snowflake text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Para o inverno</h3>
+                    <p class="text-gray-600">Amadeirados e especiados, aquecem no clima frio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.jpeg" alt="Ágatha decants" class="h-10 w-10 rounded-full">
+                        <h3 class="text-xl font-bold text-amber-400">Ágatha decants</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Decantes e miniaturas de perfumes importados com autenticidade garantida e os melhores preços.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/agathadecants?igsh=b3Z1a2xndjh1ajRx" class="text-gray-400 hover:text-pink-500">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.link/l3o2fn" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Categorias</h4>
+                    <ul class="space-y-2">
+                        <li><a href="decantes.html" class="text-gray-400 hover:text-white">Decants</a></li>
+                        <li><a href="miniaturas.html" class="text-gray-400 hover:text-white">Miniaturas</a></li>
+                        <li><a href="masculinos.html" class="text-gray-400 hover:text-white">Perfumes Masculinos</a></li>
+                        <li><a href="femininos.html" class="text-gray-400 hover:text-white">Perfumes Femininos</a></li>
+                    </ul>
+                </div>
+                
+                
+                <div>
+                    <h4 class="text-lg font-bold text-amber-400 mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-400"></i>
+                            <span>São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-amber-400"></i>
+                            <span>(11) 98725-7428</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-amber-400"></i>
+                            <span>agathadecants@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Ágatha decants. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Highlight current page in mobile menu
+        const currentPage = window.location.pathname.split('/').pop() || 'masculinos.html';
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        
+        mobileLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-blue-400');
+                link.classList.add('font-medium');
+            }
+        });
+        
+        // Highlight current page in desktop nav
+        const desktopLinks = document.querySelectorAll('header nav a');
+        
+        desktopLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref.replace('.html', '')) || 
+                (currentPage === 'agatha_decants.html' && linkHref === 'agatha_decants.html')) {
+                link.classList.add('text-blue-200');
+                link.classList.add('font-semibold');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in effect to elements when they enter viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+// Product data extraction and filtering
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all product cards
+    const productCards = document.querySelectorAll('.product-card');
+    const brandFilter = document.getElementById('brand-filter');
+    const resetButton = document.getElementById('reset-filters');
+    const searchInput = document.getElementById('product-search');
+    const searchButton = document.getElementById('search-btn');
+
+    // Extract product data (name, brand, price) from DOM
+    function extractProductData() {
+        return Array.from(productCards).map(card => {
+            return {
+                element: card,
+                name: card.querySelector('h3').textContent.trim(),
+                brand: card.querySelector('p').textContent.trim(),
+                price: parseFloat(
+                    card.querySelector('span').textContent
+                        .replace('R$ ', '')
+                        .replace(/\./g, '')
+                        .replace(',', '.')
+                )
+            };
+        });
+    }
+
+    // Filter products by brand
+    function filterByBrand(brand) {
+        productCards.forEach(card => {
+            const cardBrand = card.querySelector('p').textContent.trim();
+            if (brand === '' || cardBrand === brand) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Search products by name
+    function searchProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const products = extractProductData();
+        let foundMatch = false;
+        
+        products.forEach(product => {
+            const shouldShow = product.name.toLowerCase().includes(searchTerm);
+            product.element.style.display = shouldShow ? 'block' : 'none';
+            
+            if (shouldShow && !foundMatch) {
+                product.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                foundMatch = true;
+            }
+        });
+
+        if (!foundMatch && searchTerm) {
+            alert('Nenhum produto encontrado com esse nome.');
+            resetFilters();
+        }
+    }
+
+    // Reset all filters and show all products
+    function resetFilters() {
+        brandFilter.value = '';
+        searchInput.value = '';
+        productCards.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+
+    // Event listeners
+    brandFilter.addEventListener('change', function() {
+        filterByBrand(this.value);
+    });
+
+    searchButton.addEventListener('click', searchProducts);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchProducts();
+    });
+
+    resetButton.addEventListener('click', resetFilters);
+});
+        
+        // Product search functionality
+        const productSearch = document.getElementById('product-search');
+        const searchBtn = document.getElementById('search-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        function searchProducts() {
+            const searchTerm = productSearch.value.toLowerCase();
+            let foundMatch = false;
+            const products = extractProductData();
+            
+            products.forEach(p => {
+                const shouldShow = p.name.toLowerCase().includes(searchTerm);
+                p.element.style.display = shouldShow ? 'block' : 'none';
+                
+                if (shouldShow && !foundMatch) {
+                    p.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    foundMatch = true;
+                }
+            });
+
+            if (!foundMatch && searchTerm) {
+                alert('Nenhum produto encontrado com esse nome.');
+                resetFilters();
+            } else if (!searchTerm) {
+                applyFilters(); // Reapply other filters when search is cleared
+            }
+        }
+
+        // Event listeners for search
+        searchBtn.addEventListener('click', searchProducts);
+        productSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+    </script>
+</body>
+</html>
